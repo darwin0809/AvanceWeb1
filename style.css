@@ -6,27 +6,12 @@ body {
     text-align: center;
 }
 
-header {
-    background-color: #282828;
-    padding: 10px 20px;
-}
 
 .logo {
     height: 40px;
     vertical-align: middle;
 }
 
-.links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: inline-flex;
-    float: right;
-}
-
-.links li {
-    margin: 0 10px;
-}
 
 .links a {
     color: white;
@@ -35,20 +20,35 @@ header {
 }
 
 .hero {
-    padding: 100px 20px;
-    background-color: transparent;
-}
-
-.hero h1 {
-    font-size: 60px;
-    margin: 0;
-}
-
-.hero p {
     font-size: 20px;
-    margin: 20px 0;
+    position: relative; 
+    padding: 100px 20px;
+    color: white;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://www.portafolio.co/files/article_new_multimedia/uploads/2022/04/12/6255e2e41db6c.jpeg'); 
 }
 
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(141, 128, 113, 0.7), rgba(197, 197, 197, 0.7));
+    z-index: 1; 
+    pointer-events: none; 
+}
+
+.hero h1, .hero p, .hero a {
+    position: relative; 
+    z-index: 2;
+}
+.hero h1{
+    font-size: 80px;
+}
 .btn-primary {
     background-color: #1db954;
     color: white;
@@ -61,4 +61,28 @@ header {
 
 .btn-primary:hover {
     background-color: #1aa34a;
+}
+.header {
+    background-color: #141414;
+    padding: 20px 0;
+}
+.nav {
+    display: flex;
+    justify-content: center; 
+}
+.nav-item {
+    color: white;
+    padding: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+.nav-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: white;
 }
